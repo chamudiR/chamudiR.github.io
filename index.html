@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamudi Ransika | Electronics Engineering Undergraduate</title>
+
+    <meta name="title" content="Chamudi Ransika | Electronics Engineering Portfolio">
+    <meta name="description" content="Electronics Engineering undergraduate specializing in circuit design, embedded systems, and IoT development. Explore my projects and technical expertise.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chamudi-ransika-portfolio.vercel.app/">
+    <meta property="og:title" content="Chamudi Ransika | Electronics Engineering Portfolio">
+    <meta property="og:description" content="Electronics Engineering undergraduate specializing in circuit design, embedded systems, and IoT development.">
+    <meta property="og:image" content="./resources/img/heroImg.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://chamudi-ransika-portfolio.vercel.app/">
+    <meta name="twitter:title" content="Chamudi Ransika | Electronics Engineering Portfolio">
+    <meta name="twitter:description" content="Electronics Engineering undergraduate specializing in circuit design, embedded systems, and IoT development.">
+    <meta name="twitter:image" content="./resources/img/heroImg.png">
+
+    <!-- Additional Meta -->
+    <meta name="author" content="Chamudi Ransika">
+    <meta name="keywords" content="Chamudi Ransika, electronics engineering, circuit design, embedded systems, IoT, PCB design, microcontroller, Arduino, Raspberry Pi">
+    
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="chamudi-ransika-portfolio" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Chamudi Ransika",
+        "url": "https://chamudi-ransika-portfolio.vercel.app/",
+        "image": "./resources/img/heroImg.jpg",
+        "sameAs": [
+            "https://github.com/chamudiransika",
+            "https://www.linkedin.com/in/chamudiransika/"
+        ],
+        "jobTitle": "Electronics Engineering Student",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "University"
+        },
+        "description": "Electronics Engineering undergraduate specializing in circuit design and embedded systems.",
+        "email": "mailto:chamudiransika@email.com"
+    }
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pink: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                            950: '#500724'
+                        },
+                        purple: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                            950: '#2e1065'
+                        }
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'playfair': ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom styles */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bg-gradient {
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .project-card {
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(236, 72, 153, 0.1), 0 10px 10px -5px rgba(236, 72, 153, 0.04);
+        }
+
+        .skill-bar {
+            position: relative;
+            height: 8px;
+            background: #fbcfe8;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            position: absolute;
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+            transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+            transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .social-icon {
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            color: #ec4899;
+        }
+
+        /* Circuit pattern background */
+        .circuit-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            opacity: 0.05;
+        }
+
+        .circuit-bg::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 20%, #ec4899 1px, transparent 1px),
+                radial-gradient(circle at 80% 40%, #8b5cf6 1px, transparent 1px),
+                radial-gradient(circle at 40% 80%, #ec4899 1px, transparent 1px),
+                radial-gradient(circle at 90% 90%, #8b5cf6 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px, 40px 40px, 60px 60px;
+            animation: circuit-float 20s ease-in-out infinite;
+        }
+
+        @keyframes circuit-float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Typing animation */
+        .typing-text {
+            border-right: 3px solid #ec4899;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #ec4899 }
+        }
+
+        /* Custom cursor */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgba(236, 72, 153, 0.3);
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, background-color 0.3s;
+        }
+
+        .cursor-dot {
+            position: fixed;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #ec4899;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .preloader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #fbcfe8;
+            border-top: 5px solid #ec4899;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Elegant button styles */
+        .btn-elegant {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .btn-elegant:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .btn-elegant:hover:before {
+            width: 100%;
+        }
+
+        /* Elegant image hover effect */
+        .img-hover-zoom {
+            overflow: hidden;
+        }
+
+        .img-hover-zoom img {
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .img-hover-zoom:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Decorative elements */
+        .decorative-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #ec4899 0%, #8b5cf6 100%);
+            margin: 0 auto;
+        }
+
+        /* Elegant form inputs */
+        .elegant-input {
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .elegant-input:focus {
+            border-color: #ec4899;
+            box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+        }
+
+        /* Circuit board pattern */
+        .circuit-pattern {
+            background-image: 
+                linear-gradient(90deg, rgba(236, 72, 153, 0.1) 1px, transparent 1px),
+                linear-gradient(rgba(236, 72, 153, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Glow effect for electronics elements */
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+        }
+
+        .glow-effect:hover {
+            box-shadow: 0 0 30px rgba(236, 72, 153, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50" onload="loadProjectCards();">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white bg-opacity-95 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold font-playfair">
+                    <span class="text-pink-600">Chamudi</span><span class="text-purple-600">.Ransika</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-pink-600 transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-pink-600 transition-colors">About</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-pink-600 transition-colors">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-pink-600 transition-colors">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-pink-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#home" class="text-gray-700 hover:text-pink-600 transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-pink-600 transition-colors">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-pink-600 transition-colors">Skills</a>
+                    <a href="#projects" class="text-gray-700 hover:text-pink-600 transition-colors">Projects</a>
+                    <a href="#contact" class="text-gray-700 hover:text-pink-600 transition-colors">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-20">
+        <!-- Circuit Background -->
+        <div class="circuit-bg"></div>
+
+        <div class="container mx-auto px-6 py-12 md:py-0">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <div class="mb-2 inline-block">
+                        <span class="text-pink-600 text-sm font-medium tracking-wider uppercase">Electronics Portfolio</span>
+                        <div class="w-20 h-0.5 bg-pink-600 mt-1"></div>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 font-playfair">
+                        Hi, I'm <span class="text-gradient">Chamudi Ransika</span>
+                    </h1>
+                    <div class="overflow-hidden h-12">
+                        <h2 id="typing-text" class="text-2xl md:text-3xl text-gray-700 mb-6 typing-text font-playfair">
+                            Electronics Engineering Student
+                        </h2>
+                    </div>
+                    <p class="text-gray-600 mb-8 text-lg">
+                        I'm passionate about designing innovative electronic circuits and embedded systems. Currently pursuing my degree in Electronics Engineering with a focus on IoT and smart devices.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-gradient text-white px-8 py-3 rounded-lg btn-elegant shadow-md">
+                            Get in touch
+                        </a>
+                        <a href="#projects" class="border border-pink-300 text-pink-600 hover:border-pink-500 px-8 py-3 rounded-lg transition-all hover:shadow-md">
+                            View my work
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-pink-100 shadow-xl transform hover:rotate-3 transition-transform duration-500 glow-effect">
+                        <img src="./resources/img/heroImg.png" alt="Chamudi Ransika" class="object-cover w-full h-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-pink-600 text-sm font-medium tracking-wider uppercase">About Me</span>
+                <div class="decorative-line my-3"></div>
+                <h2 class="text-3xl md:text-4xl font-bold font-playfair">Who I Am</h2>
+            </div>
+            <div class="max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                    I'm an Electronics Engineering undergraduate with a deep fascination for how electronic components work together to create amazing technologies. My journey in electronics began with simple LED circuits and has evolved into complex embedded systems and IoT projects.
+                </p>
+                <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                    Currently pursuing my Bachelor's degree in Electronics Engineering, I specialize in circuit design, microcontroller programming, and PCB design. I love working with Arduino, Raspberry Pi, and various sensors to create smart, connected devices.
+                </p>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    When I'm not soldering or coding, you can find me exploring new electronic components, participating in hackathons, or mentoring junior students in our university's electronics club. I believe in the power of technology to make the world a better place.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-gray-50 circuit-pattern">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-pink-600 text-sm font-medium tracking-wider uppercase">My Expertise</span>
+                <div class="decorative-line my-3"></div>
+                <h2 class="text-3xl md:text-4xl font-bold font-playfair">Technical Skills</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <div data-aos="fade-right" data-aos-delay="100">
+                    <div class="mb-10">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Circuit Design</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%;" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-10">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Arduino Programming</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%;" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-10">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">PCB Design</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%;" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-10">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">C/C++</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%;" data-width="85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left" data-aos-delay="100">
+                    <div class="mb-10">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Raspberry Pi</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%;" data-width="75%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-10">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">IoT Development</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%;" data-width="70%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-10">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Python</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%;" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-10">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Signal Processing</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%;" data-width="65%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mx-auto my-5" data-aos="fade-up" data-aos-delay="200">
+                <a onclick="downloadPdf();" style="cursor: pointer;" class="inline-block bg-white text-pink-900 px-8 py-3 rounded-lg btn-elegant shadow-md hover:bg-pink-700 hover:text-white transition-colors">
+                    Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-pink-600 text-sm font-medium tracking-wider uppercase">My Work</span>
+                <div class="decorative-line my-3"></div>
+                <h2 class="text-3xl md:text-4xl font-bold font-playfair">Featured Projects</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8" id="project-container">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-pink-600 text-sm font-medium tracking-wider uppercase">Get In Touch</span>
+                <div class="decorative-line my-3"></div>
+                <h2 class="text-3xl md:text-4xl font-bold font-playfair">Contact Me</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div data-aos="fade-right" data-aos-delay="100">
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed text-justify">
+                        I'm always excited to collaborate on interesting electronics projects and discuss new opportunities. Whether you have a project idea or just want to connect, feel free to reach out!
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-pink-600"></i>
+                            </div>
+                            <a href="mailto:chamudiransika@email.com" class="text-gray-600 hover:text-pink-600 transition-colors">
+                                chamudiransika@email.com
+                            </a>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center mr-4">
+                                <i class="fab fa-github text-pink-600"></i>
+                            </div>
+                            <a href="https://github.com/chamudiransika" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-pink-600 transition-colors">
+                                github.com/chamudiransika
+                            </a>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center mr-4">
+                                <i class="fab fa-linkedin text-pink-600"></i>
+                            </div>
+                            <a href="https://www.linkedin.com/in/chamudiransika/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-pink-600 transition-colors">
+                                linkedin.com/in/chamudiransika
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <h3 class="text-xl font-semibold mb-4 font-playfair">Follow Me</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" target="_blank" class="social-icon w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 hover:bg-pink-200">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" target="_blank" class="social-icon w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 hover:bg-pink-200">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" target="_blank" class="social-icon w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 hover:bg-pink-200">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="space-y-6" data-aos="fade-left" data-aos-delay="100" action="https://usebasin.com/f/19b4502a7c64" method="post">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg elegant-input focus:outline-none" placeholder="Your name" />
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg elegant-input focus:outline-none" placeholder="Your email" />
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea id="message" rows="5" name="message" required class="w-full px-4 py-3 border border-gray-300 rounded-lg elegant-input focus:outline-none" placeholder="Your message"></textarea>
+                    </div>
+                    <button type="submit" class="bg-gradient text-white px-8 py-3 rounded-lg btn-elegant shadow-md">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-gradient text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p>© <span id="current-year"></span> Chamudi Ransika. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://github.com/chamudiransika" target="_blank" class="text-pink-300 hover:text-white transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/chamudiransika/" target="_blank" class="text-pink-300 hover:text-white transition-colors">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" target="_blank" class="text-pink-300 hover:text-white transition-colors">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function downloadPdf() {
+            var link = document.createElement("a");
+            link.href = "./resources/cv/Chamudi Ransika Resume.pdf";
+            link.download;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Main JavaScript -->
+    <script type="module" src="./main.js"></script>
+    <script nomodule src="./main.legacy.js"></script>
+</body>
+
+</html> 
