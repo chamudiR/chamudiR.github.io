@@ -2,9 +2,19 @@
   "projects": [
     {
       "id": 1,
-      "title": "Smart Home IoT System",
-      "short_description": "Designed and implemented a comprehensive IoT system for home automation using ESP32 microcontrollers and various sensors.",
-      "long_description": "A complete home automation solution that integrates multiple sensors and actuators through a centralized control system. Features real-time temperature monitoring, automated lighting control, smart door locks, and energy consumption optimization.",
+      "title": "AmpAware - Smart Plug Base ",
+      "short_description": "AmpAware Smart Plug Base is designed to address everyday challenges related to energy management and control over electrical appliances.",
+      "long_description": {
+        "summary": "This smart plug base combines convenience, safety, and efficiency in one compact device.",
+        "features": [
+          "Remote control via the Blynk IoT app: Switch devices on or off from anywhere.",
+          "Manual physical button allows direct local control.",
+          "Real-time power monitoring with accurate voltage and current readings.",
+          "Built-in surge and overcurrent protection enhances electrical safety.",
+          "User-friendly interface ensures effortless setup and smooth integration with the mobile app.",
+          "Compact form factor designed to fit standard plug sockets."
+        ]
+      }
       "image": "https://picsum.photos/seed/smarthome/800/600",
       "client": {
         "type": "Academic Project"
@@ -12,17 +22,16 @@
       "technologies_used": {
         "tech_stack": ["ESP32", "Arduino", "MQTT", "Node.js", "React", "SQLite"]
       },
-      "github": "https://github.com/chamudiransika/smart-home-iot",
-      "demo": "https://smart-home-demo.vercel.app",
+      "github": "https://github.com/Praveen-samuditha/AmpAware---Smart-Plug-Base",
       "duration": "6 months",
-      "team_size": "3 members"
+      "team_size": "5 members"
     },
     {
       "id": 2,
       "title": "PCB Design for Audio Amplifier",
       "short_description": "Created a custom PCB design for a high-fidelity audio amplifier with advanced filtering and power management.",
       "long_description": "High-fidelity audio amplifier PCB design with Class AB topology, delivering 50W RMS per channel with minimal distortion. Features advanced filtering circuits, thermal management, and protection systems.",
-      "image": "https://picsum.photos/seed/pcb/800/600",
+      "image": "./",
       "client": {
         "type": "Personal Project"
       },
