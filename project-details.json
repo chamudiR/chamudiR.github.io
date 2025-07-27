@@ -4,17 +4,7 @@
       "id": 1,
       "title": "AmpAware - Smart Plug Base ",
       "short_description": "AmpAware Smart Plug Base is designed to address everyday challenges related to energy management and control over electrical appliances.",
-      "long_description": {
-        "summary": "This smart plug base combines convenience, safety, and efficiency in one compact device.",
-        "features": [
-          "Remote control via the Blynk IoT app: Switch devices on or off from anywhere.",
-          "Manual physical button allows direct local control.",
-          "Real-time power monitoring with accurate voltage and current readings.",
-          "Built-in surge and overcurrent protection enhances electrical safety.",
-          "User-friendly interface ensures effortless setup and smooth integration with the mobile app.",
-          "Compact form factor designed to fit standard plug sockets."
-        ]
-      }
+      "long_description": "Many households face energy management challenges, including:<br><br><ul><li><strong>Forgotten Appliances:</strong> Devices left on unnecessarily, leading to energy waste. This can even cause fires.</li><li><strong>Lack of Energy Data:</strong> No real-time tracking of power usage.</li><li><strong>High Electricity Bills:</strong> Inefficient energy consumption.</li></ul><br>Existing smart home systems can be expensive and require a full home upgrade. <strong>AmpAware Smart Plug Base</strong> offers an affordable and customizable solution, enabling users to automate and monitor individual appliances instead of committing to a full smart home conversion.<br><br><strong>This smart plug base combines convenience, safety, and efficiency in one compact device:</strong><br><br><ul><li>Remote control via the Blynk IoT app: Switch devices on or off from anywhere.</li><li>Manual physical button allows direct local control.</li><li>Real-time power monitoring with accurate voltage and current readings.</li><li>Built-in surge and overcurrent protection enhances electrical safety.</li><li>User-friendly interface ensures effortless setup and smooth integration with the mobile app.</li><li>Compact form factor designed to fit standard plug sockets.</li></ul>",
       "image": "https://picsum.photos/seed/smarthome/800/600",
       "client": {
         "type": "Academic Project"
@@ -28,88 +18,72 @@
     },
     {
       "id": 2,
-      "title": "PCB Design for Audio Amplifier",
-      "short_description": "Created a custom PCB design for a high-fidelity audio amplifier with advanced filtering and power management.",
-      "long_description": "High-fidelity audio amplifier PCB design with Class AB topology, delivering 50W RMS per channel with minimal distortion. Features advanced filtering circuits, thermal management, and protection systems.",
+      "title": "Strain Gauge based Torque sensor with Wireless power",
+      "short_description": "This project is a strain gauge-based torque sensor designed for accurate, robust, and wireless torque measurement in industrial settings. It employs dual-grid shear strain gauges in a full Wheatstone bridge configuration, advanced signal conditioning, wireless power and data transmission, and a compact shaft-mounted PCB.",
+      "long_description": "This wireless torque sensor system offers a compact and precise solution for real-time torque measurement in dynamic applications. Built with robust materials and advanced electronics, it enables seamless data transmission and remote monitoring without the need for physical power connections.<br><br><strong>Key Features:</strong><br><ul><li><strong>Measurement Range:</strong> Up to 50 N·cm</li><li><strong>Wireless Power & Data:</strong> Inductive power transfer and Bluetooth Low Energy (BLE) transmission</li><li><strong>High Sensitivity:</strong> Full-bridge Wheatstone configuration with dual-grid strain gauges</li><li><strong>Robust Construction:</strong> Stainless steel enclosure, precision shaft, and polyimide flex PCB</li><li><strong>Real-Time Monitoring:</strong> BLE-enabled, compatible with mobile and desktop visualization tools</li></ul><br><strong>System Overview:</strong><br><ol><li><strong>Hardware Assembly:</strong><ul><li>Mount dual-grid strain gauges at ±45° on the shaft’s central region, positioned 180° apart.</li><li>Assemble the two-part stainless steel enclosure with bearings securing both shaft ends.</li><li>Attach the flex PCB and receiver coil to the shaft; mount the transmitter coil concentrically within the enclosure.</li></ul></li><li><strong>Powering the System:</strong><ul><li>Connect a 5V DC supply to the transmitter PCB using USB.</li><li>Inductive coupling delivers wireless power to the rotating shaft electronics.</li></ul></li><li><strong>Firmware & Programming:</strong><ul><li>Use Keil MDK and SmartBond Flash Programmer to configure the DA14531 BLE MCU.</li><li>The MCU reads digital data from the HX711 ADC and transmits calibrated torque values via BLE.</li><li>The device advertises as a BLE peripheral for real-time connectivity.</li></ul></li><li><strong>Data Visualization:</strong><ul><li>Receive and display real-time torque data using a BLE-enabled app or custom desktop software.</li><li>Data format: 24-bit signed values, scaled via calibration constants.</li></ul></li></ol><br><strong>Schematic & PCB Design:</strong><br><ul><li>Includes detailed circuits for the transmitter, receiver, booster module, instrumentation amplifier, offset correction, ADC, and BLE microcontroller.</li><li>Two-layer flex PCB designed with a component-free center zone for shaft mounting and teardrop pads to enhance mechanical durability.</li></ul><br><strong>Software Structure:</strong><br><ul><li><strong>BLE Service:</strong> Custom GATT profile created for continuous torque data streaming.</li><li><strong>GPIO Configuration:</strong> Assigned pins for HX711, status LED, and SPI flash.</li><li><strong>HX711 Integration:</strong> Timer-based data polling, endian correction, and BLE notifications.</li></ul><br><strong>Maintenance & Troubleshooting:</strong><br><ul><li>Open the enclosure by loosening bolts to access internal components.</li><li>Check the PCB and flex circuit for damage, especially near high-flex regions.</li><li>Verify coil alignment to ensure effective wireless power transfer.</li><li>Minimize signal noise using proper grounding and shielded connections.</li></ul>",
       "image": "./",
       "client": {
-        "type": "Personal Project"
+        "type": "Group Project"
       },
       "technologies_used": {
-        "tech_stack": ["KiCad", "Analog Design", "PCB Layout", "Audio Electronics", "SPICE"]
+        "tech_stack": ["BLE", "Altium", "SolidWorks", "Wireless Power"]
       },
-      "github": "https://github.com/chamudiransika/audio-amplifier-pcb",
+      "github": "https://github.com/chamudiR/Strain-Gauge-based-Torque-Sensor",
       "demo": null,
       "duration": "4 months",
-      "team_size": "Individual project"
+      "team_size": "5 members"
+
     },
     {
       "id": 3,
-      "title": "Solar Panel Monitoring System",
+      "title": "License Plate Recognition",
       "short_description": "Developed a real-time monitoring system for solar panels with data logging and performance analytics.",
-      "long_description": "Real-time solar panel monitoring system with data logging, performance analytics, and predictive maintenance. Tracks energy production, efficiency metrics, and environmental conditions for optimal performance.",
+      "long_description": "This project presents a lightweight and efficient License Plate Recognition (LPR) system built using YOLOv8 and deployed on a Raspberry Pi. Designed for real-time performance and low-power environments, it enables automatic identification of license plates from camera feeds or stored images. The system is ideal for smart surveillance, automated parking, and access control applications.<br><br><strong>Key Features:</strong><br><ul><li><strong>Real-time License Plate Detection:</strong> Uses the YOLOv8 object detection model to identify license plates with high accuracy.</li><li><strong>Optimized for Raspberry Pi:</strong> Carefully tuned to run efficiently on resource-constrained hardware without compromising performance.</li><li><strong>Custom Model Support:</strong> Easily load pre-trained YOLOv8 models or custom-trained models tailored to specific datasets.</li><li><strong>Modular Design:</strong> Output data can be integrated seamlessly into larger applications such as vehicle tracking or automated gate control.</li><li><strong>Scalable Implementation:</strong> The system can be extended to work with multiple cameras or edge devices in a networked setup.</li></ul>",
       "image": "https://picsum.photos/seed/solar/800/600",
       "client": {
-        "type": "Research Project"
+        "type": "Individual Research Project"
       },
       "technologies_used": {
-        "tech_stack": ["Raspberry Pi", "Python", "SQLite", "Data Visualization", "IoT"]
+        "tech_stack": ["Raspberry Pi", "Python", "Machine Learning", "Data Visualization", "Computer Vision","Image Processing","Opencv"]
       },
-      "github": "https://github.com/chamudiransika/solar-monitoring",
-      "demo": "https://solar-monitor-demo.vercel.app",
-      "duration": "8 months",
-      "team_size": "4 members"
+      "github": "https://github.com/chamudiR/License-plate-recognition",
+      "demo": null,
+      "duration": "1 month"
+  
     },
     {
       "id": 4,
-      "title": "Gesture Control Robot",
+      "title": "Autonomus Robot",
       "short_description": "Built a robot that responds to hand gestures using computer vision and Arduino-based motor control.",
-      "long_description": "Interactive robot that responds to hand gestures using computer vision and Arduino-based motor control. Features real-time gesture recognition, smooth motor control, and obstacle avoidance capabilities.",
+      "long_description": "An autonomous robot capable of maze solving, barcode recognition, and robotic arm control. The system employed a multi-microcontroller architecture with dedicated circuits for power regulation and motor control. Box arrangement tasks were executed using algorithmic decision-making, coupled with an IR sensor-enabled robotic arm for precision handling.",
       "image": "https://picsum.photos/seed/robot/800/600",
       "client": {
         "type": "Competition Entry"
       },
       "technologies_used": {
-        "tech_stack": ["Arduino", "OpenCV", "Python", "Motor Control", "Sensors"]
+        "tech_stack": ["Arduino", "Algorithm Development", "Python", "Motor Control", "Sensors"]
       },
-      "github": "https://github.com/chamudiransika/gesture-robot",
-      "demo": "https://gesture-robot-demo.vercel.app",
+      "github": "https://github.com/chamudiR/Robot-Design-and-Competition",
+      "demo": null,
       "duration": "5 months",
-      "team_size": "2 members"
+      "team_size": "5 members"
     },
     {
       "id": 5,
-      "title": "Wireless Sensor Network",
-      "short_description": "Implemented a mesh network of wireless sensors for environmental monitoring in remote locations.",
-      "long_description": "Mesh network of wireless sensors for environmental monitoring in remote locations. Features low-power design, long-range communication, and robust data transmission for harsh environments.",
+      "title": "BSFix - Smart BSF Farming System",
+      "short_description": "BSFIX is a smart IoT-powered system that puts farmers in full control of their BSF farms",
+      "long_description": "BSFix is a smart IoT-powered system designed to revolutionize Black Soldier Fly (BSF) farming by enabling real-time environmental monitoring and automation. Developed to optimize egg production and composting efficiency, BSFix empowers farmers with data-driven control over temperature, humidity, lighting, and feeding schedules. The system includes two main IoT-integrated units — the <strong>Breeding Unit</strong> and the <strong>Compost Bin</strong> — each engineered for precision and scalability.<br><br><strong>Key Features:</strong><ul><li><strong>Breeding Unit:</strong> Monitors and adjusts light and humidity in real-time to maintain ideal conditions for BSF reproduction, requiring minimal manual labor.</li><li><strong>Compost Bin:</strong> A layered structure for efficient organic waste processing. Each layer serves a unique function — from food scrap input to larval separation and refined compost collection.</li><li><strong>Smart Sensors:</strong> Includes load cells to optimize feeding, thermal imaging for monitoring larval growth, and vibration sieves for automated separation of mature larvae.</li><li><strong>Real-Time Monitoring:</strong> A mobile and web app provide a user-friendly dashboard for tracking conditions and system performance across the farm.</li><li><strong>Scalable Design:</strong> Suitable for both small-scale and large-scale BSF farming setups, reducing labor while increasing yield.</li></ul><br><strong>BSF Community Integration:</strong><br>BSFix is more than just a product—it’s a platform to build a connected BSF farming ecosystem. Farmers can share real-time data, collaborate on best practices, and access a marketplace for BSF products and services. This community-driven model encourages faster problem-solving, innovation, and sustainable farming growth.<br><br><strong>Digital Tools:</strong><ul><li><strong>BSFix Mobile and Web App:</strong> Features user registration, farm dashboards, real-time automation, and educational content on BSF farming and waste impact.</li><li><strong>Learning Hub:</strong> Access information on the BSF lifecycle, composting methods, and sustainable agricultural practices.</li></ul><br>With BSFix, farmers can reduce waste, produce high-quality animal feed, and contribute to a cleaner, greener future. Join the BSF farming revolution with Team ZYPHER — empowering agriculture through innovation and connectivity.",
       "image": "https://picsum.photos/seed/sensor/800/600",
       "client": {
-        "type": "Research Project"
+        "type": "Group Project"
       },
       "technologies_used": {
         "tech_stack": ["LoRa", "Mesh Networking", "C++", "Low Power Design", "Sensors"]
       },
       "github": "https://github.com/chamudiransika/wireless-sensors",
       "demo": null,
-      "duration": "7 months",
-      "team_size": "3 members"
-    },
-    {
-      "id": 6,
-      "title": "Digital Signal Processing Module",
-      "short_description": "Designed a DSP module for real-time audio processing with FPGA implementation and custom algorithms.",
-      "long_description": "Digital Signal Processing module for real-time audio processing with FPGA implementation. Features custom DSP algorithms, low-latency processing, and configurable filter banks for various audio applications.",
-      "image": "https://picsum.photos/seed/dsp/800/600",
-      "client": {
-        "type": "Academic Project"
-      },
-      "technologies_used": {
-        "tech_stack": ["FPGA", "VHDL", "DSP Algorithms", "MATLAB", "Verilog"]
-      },
-      "github": "https://github.com/chamudiransika/dsp-module",
-      "demo": "https://dsp-module-demo.vercel.app",
-      "duration": "6 months",
-      "team_size": "2 members"
+      "duration": "12 months",
+      "team_size": "5 members"
     }
   ]
 } 
